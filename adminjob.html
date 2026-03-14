@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Freelance Job Finder</title>
+    </head>
+    <body>
+        <header>
+            <h1>Position </h1>
+        </header>
+        <main>
+            <section>
+                <h3>Job description</h3>
+                <textarea rows="6" cols="50"></textarea>
+                <h3>Company name</h3>
+                <input id="companyname" name="companyname">
+                <h3>Location</h3>
+                <input id="location" name="location">
+                <h3>Job Type</h3>
+                <input type="radio" id="Full-time" name="jobtype" value="Full-time">
+                <label for="Full-time">Full-time</label><br>
+                <input type="radio" id="Part-time" name="jobtype" value="Part-time">
+                <label for="Part-time">Part-time</label><br>
+                <input type="radio" id="Internship" name="jobtype" value="Internship">
+                <label for="Internship">Internship</label>
+                <h3>Salary</h3>
+                <input type="number" min="1000" max="100000" step="1000"><br><br>
+                <button>Edit</button> <button>Delete</button>
+            </section>
+        </main>
+    </body>
+</html>
