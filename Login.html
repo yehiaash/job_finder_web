@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-<div class="container" >
-    <form >
-        <h2><b>Login</b></h2>
-        <input type="text" name="username_or_email" id="email" placeholder="Username or Email" required> <br><br>
-        <input type="password" name="password" id="password" placeholder="Password" required> <br><br>
+<div>
+    <form>
+        <h2>
+        <b><font face="Arial">Login</font></b>
+        </h2>
+        <input type="text" id="username_or_email" placeholder="Username or Email" required> <br><br>
+        <input type="text" id="password" placeholder="Password" required> <br><br>
         <label><input type="checkbox">Remember me </label> <br><br>
-        <a href="index.html"><button type="button" id="loginButton" >Login </button></a>
-        <p>Don't have account?<a href="Register.html">Register</a></p>
+        <a href="index.html"><button type="button" id="loginBtn" >Login </button></a>
+        <p><font face="Arial">Don't have account?</font>
+        <a href="Register.html">Register</a></p>
     </form>
 </div>
+<script>
+    document.getElementById("loginBtn").addEventListener("click", function() {
+
+    let user = document.getElementById("username_or_email").value;
+    localStorage.setItem("username", user);
+    window.location.href = "Profile.html";
+});
+</script>
 </body>
 </html>
