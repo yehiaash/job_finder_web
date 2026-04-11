@@ -45,6 +45,10 @@ function register(){
             alert("Please enter unique name!");
             return false;
         }
+        if(userInfo[i].email===email){
+            alert("This email is already in used!");
+            return false;
+        }
     }
     let info={
         "name":name,
