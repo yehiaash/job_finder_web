@@ -22,7 +22,7 @@ h2 i {
 a:visited {
     color: #1565C0;
 }
-#email {
+#EMAIL {
     padding: 7px;
     border: 1px solid #64B5F6;
     border-radius: 7px;
@@ -30,7 +30,20 @@ a:visited {
     width: 300px;
     height: 12px;
 }
-#email:focus {
+#EMAIL:focus {
+    outline: none;
+    background-color:rgb(222, 226, 230);
+    border-color: #64B5F6;
+}
+#username {
+    padding: 7px;
+    border: 1px solid #64B5F6;
+    border-radius: 7px;
+    color: black;
+    width: 300px;
+    height: 12px;
+}
+#username:focus {
     outline: none;
     background-color:rgb(222, 226, 230);
     border-color: #64B5F6;
