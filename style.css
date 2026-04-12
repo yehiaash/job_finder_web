@@ -55,7 +55,7 @@ nav {
 .nav-left { display: flex; gap: 10px; }
 
 .nav-left input {
-    width: 250px;
+    width: 500px;
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: 12px;
