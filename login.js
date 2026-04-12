@@ -38,6 +38,8 @@ function login() {
     if(matchedUser){
         console.log(matchedUser);
     }
+    localStorage.setItem("username", matchedUser.name);
+    localStorage.setItem("useremail", matchedUser.email);
    localStorage.setItem("currentuser",JSON.stringify(matchedUser));
 
     if (matchedUser.role === "admin") {
