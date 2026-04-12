@@ -4,40 +4,73 @@ body{
     align-items: center;
     height: 100vh;
     font-family: sans-serif;
-    background-color: #212529;
+    background: linear-gradient(to top, #64B5F6,#1565C0 );
+    color: #1976D2;
 }
 label{
     font-weight: 800;
     font-size: 10px;
     margin-left: 3px;
 }
-#email {
+h2{
+    display: flex;
+    gap:225px;
+}
+h2 i {
+    font-size: 25px;
+}
+a:visited {
+    color: #1565C0;
+}
+#EMAIL {
     padding: 7px;
-    border: 1px solid black;
+    border: 1px solid #64B5F6;
     border-radius: 7px;
     color: black;
     width: 300px;
     height: 12px;
+}
+#EMAIL:focus {
+    outline: none;
+    background-color:rgb(222, 226, 230);
+    border-color: #64B5F6;
+}
+#username {
+    padding: 7px;
+    border: 1px solid #64B5F6;
+    border-radius: 7px;
+    color: black;
+    width: 300px;
+    height: 12px;
+}
+#username:focus {
+    outline: none;
+    background-color:rgb(222, 226, 230);
+    border-color: #64B5F6;
 }
 #password {
     padding: 7px;
-    border: 1px solid black;
+    border: 1px solid #64B5F6;
     border-radius: 7px;
     color: black;
     width: 300px;
     height: 12px;
 }
+#password:focus {
+    outline: none;
+    background-color:rgb(222, 226, 230);
+    border-color: #64B5F6;
+}
 .container{
     justify-content: center;
-    border: 1px solid black;
+    border: 1px solid #90CAF9;
     padding: 20px;
-    background-color: rgb(222, 226, 230);
+    background-color: #E3F2FD;
     border-radius: 10px;
-    box-shadow:10px 10px 2px black;
 }
 #loginButton{
     padding: 10px;
-    background-color: #212529;
+    background-color: #1565C0;
     color: white;
     border: none;
     font-weight: bold;
@@ -46,7 +79,7 @@ label{
     width: 300px;
 }
 #loginButton:hover {
-    background-color: #ADB5BD;
+    background-color: #42A5F5 ;
     color: black;
-    box-shadow:10px 10px 2px #343A40;
+    box-shadow:10px 10px 2px #90CAF9;
 }

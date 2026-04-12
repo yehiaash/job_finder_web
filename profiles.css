@@ -1,0 +1,82 @@
+*{
+    font-family: sans-serif;
+}
+header {
+    background-color: #1E88E5;
+    display:grid; 
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    max-height: 100px;
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+.title{
+    color:#E3F2FD ;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    justify-self:center;
+    margin:0;
+}
+nav{
+    grid-column: 3/4;
+    grid-row: 2/3;
+    justify-self:start;
+    display:flex;
+    align-self: center;
+    gap: 5px;
+}
+
+i,a{
+    text-decoration: none;
+    color:#E3F2FD  ;
+}
+label{
+    color: #1565C0;
+}
+main{
+    padding-top:20px;
+    display:grid;
+    row-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr 1fr 1fr 3fr ;
+    height:500px;
+    background-color:#E3F2FD ;
+}
+#name{
+    grid-area:1/2/2/3 ;
+}
+.email{
+    grid-area:2/2/3/3;
+}
+.field{
+    grid-area:3/2/4/3;
+}
+.experience{
+    grid-area: 4/2/5/3;
+}
+.status{
+    grid-area:5/2/6/3;
+}
+.end{
+    grid-area: 6/2/7/3;
+}
+input,textarea,button{
+    border-radius: 10px;
+
+}
+button:hover{
+    background-color: #90CAF9;
+}
+input,textarea{
+    background-color: #2196F3;
+    color:#1565C0;
+}
+input::placeholder,textarea::placeholder{
+    color:#1565C0;
+}
+/* input:focus,textarea:focus{
+    background-color:#1976D2;
+} */
+
+
+
