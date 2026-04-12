@@ -8,37 +8,48 @@
 
 <body>
 
-<h1>Job Details</h1>
-<nav align="end">
-        <a href="Profile.html">Profile</a> ||
-        <a href="index.html">Home</a> ||
-        <a href="Applied_jobs.html">Applied Jobs</a> ||
-        <a href="Login.html">Login</a> ||
+<div class="container">
+
+    <h1>Job Details</h1>
+
+    <nav>
+        <a href="Profile.html">Profile</a>
+        <a href="index.html">Home</a>
+        <a href="Applied_jobs.html">Applied Jobs</a>
+        <a href="Login.html">Login</a>
         <a href="Register.html">Register</a>
     </nav>
 
-<label>Job Title</label><br>
-<input type="text" readonly><br><br>
+    <div class="form-group">
+        <label>Job Title</label>
+        <input type="text" readonly>
+    </div>
 
-<label>Company Name</label><br>
-<input type="text" readonly><br><br>
+    <div class="form-group">
+        <label>Company Name</label>
+        <input type="text" readonly>
+    </div>
 
-<label>Salary</label><br>
-<input type="number" readonly><br><br>
+    <div class="form-group">
+        <label>Salary</label>
+        <input type="number" readonly>
+    </div>
 
-<label>Years of Experience</label><br>
-<input type="number" readonly><br><br>
+    <div class="form-group">
+        <label>Years of Experience</label>
+        <input type="number" readonly>
+    </div>
 
-<label>Description</label><br>
-<textarea rows="4" cols="40" readonly>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea rows="4" readonly></textarea>
+    </div>
 
-</textarea><br><br>
+    <form action="applied_jobs.html">
+        <button>Apply for Job</button>
+    </form>
 
-<form action="applied_jobs.html">
-
-<button>Apply for Job</button>
-
-</form>
+</div>
 
 </body>
 </html>

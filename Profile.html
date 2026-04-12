@@ -20,28 +20,29 @@
 <main id="usermain">
     <div id="name">
         <label >Name</label><br><br>
-        <input  type="text" name="name" readonly >
+        <input  type="text" id="name_in" name="name" readonly >
     </div>
     <div class="email">
         <label >Email</label><br><br>
-        <input  type="email" name="email" readonly >
+        <input  type="email" id="email_in" name="email" readonly >
     </div>
     <div class="field">
         <label >Field of expertise</label><br><br>
-        <input type="text" name="field of expertise" placeholder="field of expertise">
+        <input type="text" id="field_in"  name="field of expertise" placeholder="field of expertise">
     </div>
     <div class="experience">
     <label >Experience</label><br><br>
-    <button >Add experience</button>
+    <textarea id="experience_in" rows="4" cols="50"></textarea><br><br>
+    <button onclick="addExperience()">Add experience</button>
     </div>
     <div class="status">
     <label >Status</label><br><br>
-    <input type="text" name="status" placeholder="Status">
+    <input type="text"  id="status_in" name="status" placeholder="Status">
     </div>
     <div class="end">  
     <label >Bio</label><br></br>
-    <textarea rows="4" cols="50"></textarea><br><br>
-    <button >Save</button>
+    <textarea id="bio_in" rows="4" cols="50"></textarea><br><br>
+    <button onclick="saveData()">Save</button>
     </div>
     <script src="Profile.js"></script>
 </main>
