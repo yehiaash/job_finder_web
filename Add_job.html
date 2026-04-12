@@ -1,44 +1,80 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-<title>Add Job</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Job</title>
+    <link rel="stylesheet" href="style add job,view list.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
-<nav align="end">
-                <a href="adminprofile.html">Profile</a> ||
-                <a href="View_list.html">Home</a> ||
-                <a href="Add_job.html">Add job</a> ||
-                <a href="Login.html">Login</a> ||
-                <a href="Register.html">Register</a>
-            </nav> 
-<h1>Add Job Opportunity</h1>
 
-<form>
+    <nav>
+        <h1>Add Job</h1>
 
-<label>Job Title</label><br>
-<input type="text"><br><br>
+        <div class="nav-links">
+            <a href="adminprofile.html"><i class="fa-solid fa-user"></i> Profile</a>
+            <a href="View_list.html"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="Add_job.html"><i class="fa-solid fa-plus"></i> Add job</a>
+            <a href="Login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+            <a href="Register.html"><i class="fa-solid fa-user-plus"></i> Register</a>
+        </div>
+    </nav>
 
-<label>Salary</label><br>
-<input type="number"><br><br>
+    <div class="form-container">
+        <form>
 
-<label>Company Name</label><br>
-<input type="text"><br><br>
+            <label>Job Title</label>
+            <input type="text" placeholder="Enter job title">
 
-<label>Job Status</label><br>
-<select>
-<option>Open</option>
-<option>Closed</option>
-</select><br><br>
+            <label>Salary</label>
+            <input type="number" placeholder="Enter salary">
 
-<label>Years of Experience</label><br>
-<input type="number"><br><br>
+            <label>Company Name</label>
+            <input type="text" placeholder="Enter company name">
 
-<label>Description</label><br>
-<input type="text"><br><br>
+            <label>Job Status</label>
+            <select>
+                <option>Open</option>
+                <option>Closed</option>
+            </select>
 
-<button>Add Job</button>
+            <label>Years of Experience</label>
+            <input type="number" placeholder="Years of experience">
 
-</form>
+            <label>Description</label>
+            <textarea placeholder="Write job description..."></textarea>
+
+            <button type="submit">Add Job</button>
+
+        </form>
+    </div>
+
+
+
+    <script>
+document.querySelector("form").addEventListener("submit",function(e){ e.preventDefault();
+    let title=document.querySelectorAll("input")[0].value;
+    let salary=document.querySelectorAll("input")[1].value;
+    let company=document.querySelectorAll("input")[2].value;
+    let status=document.querySelector("select").value;
+    let experience=document.querySelectorAll("input")[3].value;
+    let description=document.querySelector("textarea").value;
+    let job ={ 
+        id:Date.now(),
+        title,salary,company,status,experience,description
+    };
+    let jobs=JSON.parse(localStorage.getItem("jobs"))||[];
+    jobs.push(job);
+    localStorage.setItem("jobs",JSON.stringify(jobs));
+    alert("Added Job Successfully ");
+    document.querySelector("form").reset();
+
+    }) ;
+
+</script>
 </body>
 </html>
