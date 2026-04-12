@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CareerHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
+<<<<<<< HEAD
     <h1 align="center">CareerHub</h1>
     <p align="center"> Search and explore job opportunities</p>
     <nav align="end">
@@ -15,36 +18,58 @@
         <a href="Applied_jobs.html">Applied Jobs</a> ||
         <a href="Login.html">Login</a> ||
         <a href="Register.html">Register</a>
+=======
+    <div class="header-bar">
+        <h1>CareerHub</h1>
+    </div>
+    <p>Search and explore job opportunities</p>
+
+    <nav>
+        <div class="nav-left">
+            <input id="searchInput" type="text" placeholder="Search With job title">
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <div class="nav-right">
+            <a href="Profile.html"><i class="fas fa-user"></i> Profile</a>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="Applied_jobs.html"><i class="fas fa-briefcase"></i> Applied Jobs</a>
+            <a href="Login.html"><i class="fas fa-right-to-bracket" id="Login"></i> Login</a>
+            <a href="Register.html"><i class="fas fa-user-plus" id="Register"></i> Register</a>
+            <a href="index.html"><i class="fas fa-right-to-bracket" id="Logout"></i> Logout</a>
+
+        </div>
+>>>>>>> e8682ddf5661516c5b78949e15e67c33525e62c2
     </nav>
-    <hr>
-    <h2>Search jobs </h2>
-    <input type="text" placeholder="Search With job title">
-    <button style="border-radius: 10 ;">Search</button>
-    <hr>
-    <form >
-    <h2>Filter jobs</h2>
-    <label for="Category">Category</label>
-    <select name="Category" id="Category">
-        <option >All Category</option>
-    </select>
 
-    <br><br>
-    <label for="Job type">Job Type</label>
-    <select name="Job type" id="Job Type">
-        <option >All types</option>
-    </select>
-    <br><br>
-    <label for="Budget">Budget</label>
-    <select name="Budget" id="Budget">
-        <option >Any Budget</option>
-    </select>
-    <br><br>
-    <button type="reset">Reset</button>
+
+    <form>
+        <h2>Filter Jobs</h2>
+
+        <label>Category</label>
+        <select id="category">
+            <option>All Category</option>
+        </select>
+
+        <label>Job Type</label>
+        <select id="jobType">
+            <option>All types</option>
+        </select>
+
+        <label>Budget</label>
+        <select id="budget">
+            <option>Any Budget</option>
+        </select>
+
+        <button id="resetbot" type="reset">Reset</button>
     </form>
+
     <hr>
 
-    <h2> Available Jobs</h2>
-    <ul></ul>
- 
+    <h2>Available Jobs</h2>
+    <ul id="Applied_jobs_list"></ul>
+    <script src="Userhome.js"></script>
+
 </body>
+
 </html>
