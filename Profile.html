@@ -3,29 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>My Profile</title>
+    <link rel="stylesheet" href="profiles.css">
+    <script src="https://kit.fontawesome.com/057c30dfce.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<h1><font face="Arial">User Profile</font></h1>
-<nav align="end">
-        <a href="Profile.html">Profile</a> ||
-        <a href="index.html">Home</a> ||
-        <a href="Applied_jobs.html">Applied Jobs</a> ||
-        <a href="Login.html">Login</a> ||
-        <a href="Register.html">Register</a>
+<header>
+<h1 class="title">CareerHub</h1>
+<nav>
+        <a href="Profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="Applied_jobs.html"><i class="fa-solid fa-briefcase"> </i> Applied Jobs</a>
+                <a href="Login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                <a href="Register.html"><i class="fa-solid fa-person-circle-plus"></i> Register</a>
     </nav>
-<label>Name</label><br><br>
-<input type="text" name="name" readonly ><br><br>
-<label>Email</label><br><br>
-<input type="email" name="email" readonly ><br><br>
-<label>Field of expertise</label><br><br>
-<input type="text" name="field of expertise" placeholder="field of expertise"><br><br>
-<label>Experience</label><br><br>
-<button >Add experience</button><br><br>
-<label>Status</label><br><br>
-<input type="text" name="status" placeholder="Status"><br><br>
-<label>Bio</label><br></br>
-<textarea rows="4" cols="50"></textarea><br><br>
-<input type="submit" value="Save">
-
+</header>
+<main>
+    <div id="name">
+        <label >Name</label><br><br>
+        <input  type="text" name="name" readonly >
+    </div>
+    <div class="email">
+        <label >Email</label><br><br>
+        <input  type="email" name="email" readonly >
+    </div>
+    <div class="field">
+        <label >Field of expertise</label><br><br>
+        <input type="text" name="field of expertise" placeholder="field of expertise">
+    </div>
+    <div class="experience">
+    <label >Experience</label><br><br>
+    <button >Add experience</button>
+    </div>
+    <div class="status">
+    <label >Status</label><br><br>
+    <input type="text" name="status" placeholder="Status">
+    </div>
+    <div class="end">  
+    <label >Bio</label><br></br>
+    <textarea rows="4" cols="50"></textarea><br><br>
+    <button >Save</button>
+    </div>
+    <script src="Profile.js"></script>
+</main>
 </body>
 </html>
