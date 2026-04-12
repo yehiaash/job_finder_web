@@ -63,26 +63,6 @@
 
 
 
-    <script>
-document.querySelector("form").addEventListener("submit",function(e){ e.preventDefault();
-    let title=document.querySelectorAll("input")[0].value;
-    let salary=document.querySelectorAll("input")[1].value;
-    let company=document.querySelectorAll("input")[2].value;
-    let status=document.querySelector("select").value;
-    let experience=document.querySelectorAll("input")[3].value;
-    let description=document.querySelector("textarea").value;
-    let job ={ 
-        id:Date.now(),
-        title,salary,company,status,experience,description
-    };
-    let jobs=JSON.parse(localStorage.getItem("jobs"))||[];
-    jobs.push(job);
-    localStorage.setItem("jobs",JSON.stringify(jobs));
-    alert("Added Job Successfully ");
-    document.querySelector("form").reset();
-
-    }) ;
-
-</script>
+    <script src="addjob.js"> </script>
 </body>
 </html>

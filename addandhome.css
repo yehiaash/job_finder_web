@@ -106,7 +106,7 @@ tr:nth-child(even) {
     background-color: #0D47A1;
     transform: translateY(-1px);
 }
-.delete-btn {
+.view-btn {
     background-color: #1E88E5;
     color: white;
     border: none;
@@ -116,7 +116,7 @@ tr:nth-child(even) {
     font-weight: bold;
 }
 
-.delete-btn:hover {
+.view-btn:hover {
     background-color: #0D47A1;
 }
 

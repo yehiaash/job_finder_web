@@ -1,6 +1,4 @@
-if(localStorage.getItem("jobs")){
-    
-}
+
 let jobs=JSON.parse(localStorage.getItem("jobs"))||[];
     let table=document.getElementById("jobTable")
     function displayJobs() {
@@ -19,8 +17,8 @@ let jobs=JSON.parse(localStorage.getItem("jobs"))||[];
                 <td>${job.company}</td>
                 <td>${job.status}</td>
                 <td>
-                        <button onclick="deleteJob(${index})" class="delete-btn">
-                            Delete
+                         <button onclick="redirect(${index})" class="view-btn">
+                            View
                         </button>
                     </td>
             </tr>
@@ -29,9 +27,16 @@ let jobs=JSON.parse(localStorage.getItem("jobs"))||[];
     });
 
 }
-window.deleteJob=function(index){
-    jobs.splice(index,1);
-    localStorage.setItem("jobs",JSON.stringify(jobs));
-    displayJobs();
+let redirect= (index)=>{
+    const uinfo=JSON.parse(localStorage.getItem("currentuser"));
+    const jobs=JSON.parse(localStorage.getItem("jobs"));
+    const currentjob=jobs[index];
+    if(currentjob.company===uinfo.company){
+        window.location.href="adminjob.html";
+    }
+    else{
+        alert("Company doesn't match");
+    }
 }
+
 displayJobs();
