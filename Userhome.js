@@ -20,21 +20,21 @@ function isLoggedIn() {
 
 function updateNav() {
   if (isLoggedIn()) {
-    document.getElementById("Login").parentElement.style.display    = "none";
+    document.getElementById("Login").parentElement.style.display = "none";
     document.getElementById("Register").parentElement.style.display = "none";
-    document.getElementById("Logout").parentElement.style.display   = "inline-flex";
-    document.querySelector('a[href="Profile.html"]').style.display      = "inline-flex";
+    document.getElementById("Logout").parentElement.style.display = "inline-flex";
+    document.querySelector('a[href="Profile.html"]').style.display = "inline-flex";
     document.querySelector('a[href="Applied_jobs.html"]').style.display = "inline-flex";
   } else {
-    document.getElementById("Login").parentElement.style.display    = "inline-flex";
+    document.getElementById("Login").parentElement.style.display = "inline-flex";
     document.getElementById("Register").parentElement.style.display = "inline-flex";
-    document.getElementById("Logout").parentElement.style.display   = "none";
-    document.querySelector('a[href="Profile.html"]').style.display      = "none";
+    document.getElementById("Logout").parentElement.style.display = "none";
+    document.querySelector('a[href="Profile.html"]').style.display = "none";
     document.querySelector('a[href="Applied_jobs.html"]').style.display = "none";
   }
 }
 
-document.getElementById("Logout").parentElement.onclick = function(e) {
+document.getElementById("Logout").parentElement.onclick = function (e) {
   e.preventDefault();
   localStorage.removeItem("loggedInUser");
   updateNav();
@@ -43,8 +43,8 @@ document.getElementById("Logout").parentElement.onclick = function(e) {
 
 function populateFilters() {
   var categories = ["All Category"];
-  var types      = ["All types"];
-  var budgets    = ["Any Budget"];
+  var types = ["All types"];
+  var budgets = ["Any Budget"];
 
   for (var i = 0; i < jobs.length; i++) {
     var found = false;
@@ -70,7 +70,7 @@ function populateFilters() {
   catSel.innerHTML = "";
   for (var i = 0; i < categories.length; i++) {
     var opt = document.createElement("option");
-    opt.value       = categories[i];
+    opt.value = categories[i];
     opt.textContent = categories[i];
     catSel.appendChild(opt);
   }
@@ -79,7 +79,7 @@ function populateFilters() {
   typeSel.innerHTML = "";
   for (var i = 0; i < types.length; i++) {
     var opt = document.createElement("option");
-    opt.value       = types[i];
+    opt.value = types[i];
     opt.textContent = types[i];
     typeSel.appendChild(opt);
   }
@@ -88,17 +88,17 @@ function populateFilters() {
   budgetSel.innerHTML = "";
   for (var i = 0; i < budgets.length; i++) {
     var opt = document.createElement("option");
-    opt.value       = budgets[i];
+    opt.value = budgets[i];
     opt.textContent = budgets[i];
     budgetSel.appendChild(opt);
   }
 }
 
 function showJobs() {
-  var search   = document.getElementById("searchInput").value.toLowerCase();
+  var search = document.getElementById("searchInput").value.toLowerCase();
   var category = document.getElementById("category").value;
-  var jobType  = document.getElementById("jobType").value;
-  var budget   = document.getElementById("budget").value;
+  var jobType = document.getElementById("jobType").value;
+  var budget = document.getElementById("budget").value;
 
   var ul = document.getElementById("Applied_jobs_list");
   ul.innerHTML = "";
@@ -108,16 +108,16 @@ function showJobs() {
   for (var i = 0; i < jobs.length; i++) {
     var job = jobs[i];
 
-    var matchSearch   = job.title.toLowerCase().indexOf(search) != -1 || job.company.toLowerCase().indexOf(search) != -1;
+    var matchSearch = job.title.toLowerCase().indexOf(search) != -1 || job.company.toLowerCase().indexOf(search) != -1;
     var matchCategory = category == "All Category" || job.category == category;
-    var matchType     = jobType  == "All types"    || job.type     == jobType;
-    var matchBudget   = budget   == "Any Budget"   || job.budget   == budget;
+    var matchType = jobType == "All types" || job.type == jobType;
+    var matchBudget = budget == "Any Budget" || job.budget == budget;
 
     if (matchSearch && matchCategory && matchType && matchBudget) {
       count++;
 
       var applied = JSON.parse(localStorage.getItem("appliedJobs") || "[]");
-      var isDone  = false;
+      var isDone = false;
       for (var j = 0; j < applied.length; j++) {
         if (applied[j] == job.id) { isDone = true; break; }
       }
@@ -137,17 +137,18 @@ function showJobs() {
       li.className = "job-card";
       li.innerHTML =
         '<div class="job-info">' +
-          '<h3 class="job-title">' + job.title + '</h3>' +
-          '<div class="job-details">' +
-            '<span class="job-company"><i class="fas fa-building"></i> ' + job.company + '</span>' +
-            '<span class="job-meta"><i class="fas fa-map-marker-alt"></i> ' + job.location + '</span>' +
-            '<span class="job-meta"><i class="fas fa-briefcase"></i> ' + job.type + '</span>' +
-            '<span class="job-meta"><i class="fas fa-dollar-sign"></i> ' + job.budget + '</span>' +
-          '</div>' +
+        '<h3 class="job-title">' + job.title + '</h3>' +
+        '<div class="job-details">' +
+        '<span class="job-company"><i class="fas fa-building"></i> ' + job.company + '</span>' +
+        '<span class="job-meta"><i class="fas fa-map-marker-alt"></i> ' + job.location + '</span>' +
+        '<span class="job-meta"><i class="fas fa-briefcase"></i> ' + job.type + '</span>' +
+        '<span class="job-meta"><i class="fas fa-dollar-sign"></i> ' + job.budget + '</span>' +
+        '</div>' +
         '</div>' +
         '<div class="job-actions">' +
-          '<span class="job-badge">' + job.category + '</span>' +
-          btn +
+        '<span class="job-badge">' + job.category + '</span>' +
+        '<a href="job_details.html?id=' + job.id + '" class="apply-btn">View Details</a>' +
+        btn +
         '</div>';
 
       ul.appendChild(li);
@@ -161,7 +162,7 @@ function showJobs() {
 
 function applyJob(id, btn) {
   var applied = JSON.parse(localStorage.getItem("appliedJobs") || "[]");
-  var found   = false;
+  var found = false;
 
   for (var i = 0; i < applied.length; i++) {
     if (applied[i] == id) { found = true; break; }
@@ -177,17 +178,17 @@ function applyJob(id, btn) {
   btn.disabled = true;
 }
 
-document.getElementById("searchBtn").onclick    = function() { showJobs(); };
-document.getElementById("category").onchange   = function() { showJobs(); };
-document.getElementById("jobType").onchange    = function() { showJobs(); };
-document.getElementById("budget").onchange     = function() { showJobs(); };
+document.getElementById("searchBtn").onclick = function () { showJobs(); };
+document.getElementById("category").onchange = function () { showJobs(); };
+document.getElementById("jobType").onchange = function () { showJobs(); };
+document.getElementById("budget").onchange = function () { showJobs(); };
 
-document.getElementById("searchInput").onkeyup = function(e) {
+document.getElementById("searchInput").onkeyup = function (e) {
   if (e.key == "Enter") { showJobs(); }
 };
 
-document.querySelector("form").onreset = function() {
-  setTimeout(function() { showJobs(); }, 0);
+document.querySelector("form").onreset = function () {
+  setTimeout(function () { showJobs(); }, 0);
 };
 
 populateFilters();
