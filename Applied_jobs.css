@@ -1,72 +1,135 @@
+:root {
+    --bg-primary:     #F3F2EF;
+    --bg-surface:     #FFFFFF;
+    --border-color:   #E0DFDC;
+    --accent:         #0A66C2;
+    --accent-hover:   #004182;
+    --text-primary:   #000000;
+    --text-secondary: #666666;
+    --text-soft:      #38434F;
+}
+
+
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #E3F2FD;
+    background: var(--bg-primary);
     margin: 0;
     padding: 0;
-    color: #0D47A1;
+    color: var(--text-primary);
+}
+.header-bar {
+    width: 90%;
+    margin: 20px auto 5px auto;
+    text-align: center;
+}
+
+.header-bar h1 {
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--accent);
+    margin: 0;
+}
+
+p {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+    margin-bottom: 20px;
 }
 
 .bar {
     width: 90%;
     margin: 20px auto;
-    background-color: #2196F3;
-    color: white; 
-    padding: 15px 20px;
-    border-radius: 10px;
-    display: flex;                 
-    justify-content: space-between; 
-    align-items: center;            
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-h1 {
-    font-size: 35px;
-    color: white;
+
+.bar h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text-primary);
     margin: 0;
+}
+nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 nav a {
-  color: #E3F2FD;
-  text-decoration: none;
-  margin: 10px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-a i {
-  margin-right: 5px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: 0.2s;
 }
 
 nav a:hover {
-    color: #BBDEFB;
+    background: var(--bg-primary);
+    color: var(--text-primary);
 }
+
+
 nav a[href="Applied_jobs.html"] {
-    color: white;
-    background-color: #1565C0;
-    padding: 8px 12px;
-    border-radius: 6px;
+    background: var(--accent);
+    color: #fff;
 }
+
+nav a[href="Applied_jobs.html"]:hover {
+    background: var(--accent-hover);
+}
+
+
+nav a i {
+    margin-right: 6px;
+}
+
+
+h1 {
+    font-size: 32px;
+    color: var(--text-primary);
+    text-align: center;
+    margin-top: 20px;
+}
+
 
 table {
     width: 70%;
     margin: 30px auto;
     border-collapse: collapse;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
     text-align: center;
-    background-color: white;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
 }
 
 th {
-    background-color: #1565C0;
+    background: var(--accent);
     color: white;
+    padding: 12px;
+    font-size: 14px;
 }
 
 td, th {
     padding: 12px;
-    border-bottom: 1px solid #BBDEFB;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 14px;
 }
 
 tr:hover {
-     background-color: #E3F2FD;
-     color: #0D47A1;
+    background: var(--bg-primary);
+}
+a i {
+    margin-right: 5px;
 }
