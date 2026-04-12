@@ -10,6 +10,9 @@ header {
     padding-top:10px;
     padding-bottom: 10px;
 }
+body {
+    background-color: #E3F2FD;
+}
 .title{
     color:#E3F2FD ;
     grid-column: 2/3;
@@ -68,7 +71,7 @@ button:hover{
     background-color: #90CAF9;
 }
 input,textarea{
-    background-color: #2196F3;
+    background-color: #E3F2FD;
     color:#1565C0;
 }
 input::placeholder,textarea::placeholder{
