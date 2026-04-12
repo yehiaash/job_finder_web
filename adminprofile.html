@@ -3,32 +3,42 @@
     <head>
         <title>My Profile</title>
         <link rel="stylesheet" href="profiles.css">
+        <script src="https://kit.fontawesome.com/057c30dfce.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
             <h1 class="title">CareerHub</h1>
             <nav >
-                <a href="Profile.html"><i class="fa-solid fa-user"></i> Profile</a>
-                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-                <a href="Applied_jobs.html"><i class="fa-solid fa-briefcase"></i> Applied Jobs</a>
+                <a href="adminprofile.html"><i class="fa-solid fa-user"></i> Profile</a>
+                <a href="View_list.html"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="Add_job.html"><i class="fa-solid fa-plus"></i> Add Job</a>
                 <a href="Login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
                 <a href="Register.html"><i class="fa-solid fa-person-circle-plus"></i> Register</a>
             </nav> 
         </header>
-        <main>
-            <section>
-                <h3>Name</h3>
+        <main id="adminmain">
+                <div id="adminname">
+                <label>Name</label><br><br>
                 <input id="username" name="username" readonly>
-                <h3>Email</h3>
+                </div>
+                <div id="adminemail">
+                <label>Email</label><br><br>
                 <input id="email" name="email" readonly>
-                <h3>Company name</h3>
+                </div>
+                <div id="compname">
+                <label>Company name</label><br><br>
                 <input id="compname" name="compname" readonly>
-                <h3>Field of expertise</h3>
+                </div>
+                <div id="adminfield">
+                <label>Field of expertise</label><br><br>
                 <input id="job" name="job">
-                <h3>Bio</h3>
-                <textarea rows="6" cols="50"> </textarea>
+                </div>
+                <div id="adminend">
+                <label>Bio</label><br><br>
+                <textarea rows="6" cols="50"> </textarea><br><br>
                 <button>Save</button>
-            </section>
+                </div>
+                <script src="admin.js"></script>
         </main>
     </body>
 </html>

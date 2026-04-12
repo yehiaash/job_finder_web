@@ -1,27 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>CareerHub</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CareerHub</title>
+    <link rel="stylesheet" href="addandhome.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
-<h1>Available Jobs</h1>
-<nav align="end">
-                <a href="adminprofile.html">Profile</a> ||
-                <a href="View_list.html">Home</a> ||
-                <a href="Add_job.html">Add job</a> ||
-                <a href="Login.html">Login</a> ||
-                <a href="Register.html">Register</a>
-            </nav> 
+    <nav>
+        <h1>Available Jobs</h1>
 
-<table border="1">
+        <div class="nav-links">
+            <a href="adminprofile.html"><i class="fa-solid fa-user"></i> Profile</a>
+            <a href="View_list.html"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="Add_job.html"><i class="fa-solid fa-plus"></i> Add job</a>
+            <a href="Login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+            <a href="Register.html"><i class="fa-solid fa-user-plus"></i> Register</a>
+        </div>
+    </nav>
 
-<tr><th>ID</th><th>Job Title</th><th>Salary</th><th>Company</th><th>Status</th></tr>
-<tr><td>1</td><td>Engineer</td><td>8000</td><td>b</td><td>Open</td></tr>
-<tr><td>2</td><td>Developer</td><td>6000</td><td>A</td><td>Closed</td></tr>
+   <table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Job Title</th>
+            <th>Salary</th>
+            <th>Company</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody id="jobTable">
+    </tbody>
 </table>
-<br>
 
-<a href="Add_job.html"><button>Add Job</button></a>
+    <div class="btn-container">
+        <a href="Add_job.html" class="add-btn">Add Job</a>
+    </div>
+
+
+    <script src="adminhome.js"></script>
+
 </body>
 </html>

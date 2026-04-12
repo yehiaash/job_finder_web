@@ -26,6 +26,7 @@ function login() {
     for (let i = 0; i < userInfo.length; i++) {
         if (userInfo[i].email === email && userInfo[i].name === name && userInfo[i].password === password) {
             matchedUser = userInfo[i];
+            console.log(5);
             break;
         }
     }
@@ -34,11 +35,10 @@ function login() {
         alert("Invalid email, username, or password!");
         return false;
     }
-
-    localStorage.setItem("username", matchedUser.name);
-    localStorage.setItem("useremail", matchedUser.email);
-    localStorage.setItem("role", matchedUser.role);
-    localStorage.setItem("company", matchedUser.company);
+    if(matchedUser){
+        console.log(matchedUser);
+    }
+   localStorage.setItem("currentuser",JSON.stringify(matchedUser));
 
     if (matchedUser.role === "admin") {
         window.location.href = "View_list.html";

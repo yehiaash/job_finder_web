@@ -33,7 +33,7 @@ i,a{
 label{
     color: #1565C0;
 }
-main{
+main[id="usermain"]{
     padding-top:20px;
     display:grid;
     row-gap: 10px;
@@ -78,5 +78,27 @@ input::placeholder,textarea::placeholder{
     background-color:#1976D2;
 } */
 
-
-
+main[id="adminmain"]{
+    padding-top:20px;
+    display:grid;
+    row-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr 1fr 3fr ;
+    height:500px;
+    background-color:#E3F2FD ;
+}
+#adminname{
+    grid-area:1/2/2/3 ;
+}
+#adminemail{
+    grid-area:2/2/3/3;
+}
+#compname{
+    grid-area:3/2/4/3;
+}
+#adminfield{
+    grid-area: 4/2/5/3;
+}
+#adminend{
+    grid-area:5/2/6/3;
+}
